@@ -1,10 +1,7 @@
+import {send} from 'emailjs-com';
 import {FC, memo, useCallback, useMemo, useState} from 'react';
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+
 
 const ContactForm: FC = memo(() => {
   const defaultData = useMemo(
@@ -16,7 +13,7 @@ const ContactForm: FC = memo(() => {
     [],
   );
 
-  const [data, setData] = useState<FormData>(defaultData);
+  const [data, setData] = useState(defaultData);
 
   const onChange = useCallback(
     <T extends HTMLInputElement | HTMLTextAreaElement>(event: React.ChangeEvent<T>): void => {
@@ -32,12 +29,23 @@ const ContactForm: FC = memo(() => {
   const handleSendMessage = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      /**
-       * This is a good starting point to wire up your form submission logic
-       * */
-      console.log('Data to send: ', data);
+      const sendContactForm = await send(
+        'service_h7gyf1f',
+        'template_gnhl8ae',
+        data,
+        'G6eEBrc4xlK5qHbHK'
+      )
+      if (sendContactForm.status === 200) {
+        send(
+          'service_h7gyf1f',
+          'template_3n1cl2t',
+          data,
+          'G6eEBrc4xlK5qHbHK'
+        )
+        setData(defaultData);
+      }
     },
-    [data],
+    [data, defaultData],
   );
 
   const inputClasses =

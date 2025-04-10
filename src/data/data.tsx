@@ -2,29 +2,26 @@ import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   BuildingOffice2Icon,
-  CalendarIcon,
-  FlagIcon,
+  // CalendarIcon,
+  // FlagIcon,
   MapIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
-import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
-import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import cloudsImage from '../images/clouds.png';
+import doubleDown from '../images/doubleDown.webp';
+import airmiles from '../images/portfolio/airmiles.png';
+import goodinvesting from '../images/portfolio/goodinvesting.png';
+import gsk from '../images/portfolio/gsk.png';
+import hut8 from '../images/portfolio/hut8.png';
+// import hillsImage from '../images/hills.png';
+import pfizer from '../images/portfolio/pfizer.png';
+import Siggis from '../images/portfolio/Siggis.png';
+import TDM from '../images/portfolio/TDM.png';
+import THA from '../images/portfolio/THA.png';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -52,14 +49,14 @@ export const homePageMeta: HomepageMeta = {
  * Section definition
  */
 export const SectionId = {
-  Hero: 'hero',
-  About: 'about',
-  Contact: 'contact',
-  Portfolio: 'portfolio',
-  Resume: 'resume',
+  Hero: 'Welcome',
+  About: 'About',
+  Contact: 'Contact',
+  Portfolio: 'Clients',
+  Resume: 'Resume',
   Skills: 'skills',
   Stats: 'stats',
-  Testimonials: 'testimonials',
+  Testimonials: 'Testimonials',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
@@ -68,19 +65,14 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  name: `Yamini Coen Public Relations`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
+      <p className="prose-lg text-black-200 lg:prose-lg">
+      Nice to meet you! I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada.
       </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+      <p className="prose-lg text-black-200 lg:prose-lg">
+        Are you looking for some help with your brand’s marketing and communications strategies? Needing some social media advice, or just plainly someone to do it for you? You’re at the right place!
       </p>
     </>
   ),
@@ -97,23 +89,29 @@ export const heroData: Hero = {
       primary: false,
     },
   ],
+  downImageSrc: doubleDown,
 };
 
 /**
  * About section
  */
 export const aboutData: About = {
+  backgroundImageSrc: cloudsImage,
   profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  description: (
+    <>
+      <p className="prose-lg text-black-200 lg:prose-lg">
+      I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada. I have been working in the marketing sphere, with a focus on communications, public relations and digital marketing, for over 7 years. I’ve worked with brands across sectors, including financial services, fintech, consumer, health, wellness and more. 
+      </p>
+      <p className="prose-lg text-black-200 lg:prose-lg">
+      I'm passionate about anti-racism, 2SLGBTQIA+ issues, social justice, diversity, equity and inclusion and incorporate that framework in all of my counsel and tactical recommendations.      </p>
+    </>
+  ),
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: BuildingOffice2Icon},
+    {label: 'Location', text: 'Toronto, ON', Icon: MapIcon},
+    {label: 'Interests', text: 'Dogs, Gaming, Reality TV', Icon: SparklesIcon},
+    {label: 'Study', text: 'Kings College, Halifax', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'YCPR Inc', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -122,73 +120,68 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Some skill group',
     skills: [
       {
-        name: 'English',
+        name: 'External Communications Strategies',
         level: 10,
       },
       {
-        name: 'French',
+        name: 'Media Relations',
+        level: 9,
+      },
+      {
+        name: 'Influencer Marketing',
+        level: 8
+      },
+      {
+        name: 'Diversity, Equity and Inclusion Framework',
+        level: 7,
+      },
+      {
+        name: 'Crisis Communications and Strategy',
         level: 4,
       },
       {
-        name: 'Spanish',
+        name: 'Social Media Analysis, Planning and Execution',
         level: 3,
       },
     ],
   },
   {
-    name: 'Frontend development',
+    name: 'Some other skill group',
     skills: [
       {
-        name: 'React',
+        name: 'Community Management',
         level: 9,
       },
       {
-        name: 'Typescript',
+        name: 'Social Media Monitoring',
         level: 7,
       },
       {
-        name: 'GraphQL',
+        name: 'Content Creation including Video, Photography and Audio (Podcasting)',
         level: 6,
       },
     ],
   },
   {
-    name: 'Backend development',
+    name: 'yet another skill group',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Internal Communications Strategies',
         level: 8,
       },
       {
-        name: 'Rust',
+        name: 'Event Management',
         level: 5,
       },
       {
-        name: 'Golang',
+        name: 'Media Monitoring and Reporting',
         level: 4,
       },
     ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
-      },
-    ],
-  },
+  }
 ];
 
 /**
@@ -196,70 +189,36 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage1,
+    title: 'Pfizer',
+    image: pfizer,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage2,
+    title: 'Glaxo Smith Kline',
+    image: gsk,
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage3,
+    title: 'Air Miles',
+    image: airmiles,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage4,
+    title: 'Siggi\'s',
+    image: Siggis,
   },
   {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage5,
+    title: 'Hut 8 Mining',
+    image: hut8,
   },
   {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage6,
+    title: 'Taylor Hazell Architects',
+    image: THA,
   },
   {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage7,
+    title: 'Toronto Dog Mums',
+    image: TDM,
   },
   {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://reactresume.com',
-    image: porfolioImage11,
+    title: 'Good Investing',
+    image: goodinvesting,
   },
 ];
 
@@ -268,39 +227,58 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2017',
+    location: 'Humber College',
+    title: 'Public Relations Diploma',
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2013',
+    location: 'University of Toronto',
+    title: 'Master of Arts',
+    content: (
+      <p>
+        Comparative Literature
+      </p>
+    ),
+  },
+  {
+    date: '2013',
+    location: 'University of King\'s college',
+    title: 'Bachelor of Arts with Honourss',
+    content: (
+      <p>
+        English Literature & Philosophy
+      </p>
+    ),
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
+    date: '2023 - Present',
+    location: 'YCPR',
+    title: 'Founder',
+    content: undefined,
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: '2022 - 2023',
+    location: 'Hut 8 Mining',
+    title: 'Commununications Manager',
+    content: undefined,
+  },
+  {
+    date: '2021 - 2022',
+    location: 'Air Miles',
+    title: 'Talent Marketing Consultant',
+    content: undefined,
+  },
+  {
+    date: '2017 - 2021',
+    location: 'Porter Novelli',
+    title: 'Public Relations Consultant',
     content: (
       <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
+        Health & Wellness, Tech & Corporate Clients
       </p>
     ),
   },
@@ -341,7 +319,7 @@ export const contact: ContactSection = {
     {
       type: ContactType.Email,
       text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      href: 'mailto:yaminicoen@gmail.com',
     },
     {
       type: ContactType.Location,
@@ -365,8 +343,8 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
+  // {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
+  // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
   {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},

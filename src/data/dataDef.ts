@@ -21,10 +21,10 @@ export interface HomepageMeta {
  * Hero section
  */
 export interface Hero {
-  imageSrc: string;
   name: string;
   description: JSX.Element;
   actions: HeroActionItem[];
+  downImageSrc: string | StaticImageData;
 }
 
 interface HeroActionItem {
@@ -38,8 +38,9 @@ interface HeroActionItem {
  * About section
  */
 export interface About {
+  backgroundImageSrc?: string | StaticImageData;
   profileImageSrc?: string;
-  description: string;
+  description: JSX.Element;
   aboutItems: AboutItem[];
 }
 
@@ -78,8 +79,8 @@ export interface SkillGroup {
  */
 export interface PortfolioItem {
   title: string;
-  description: string;
-  url: string;
+  description?: string;
+  url?: string;
   image: string | StaticImageData;
 }
 
@@ -90,7 +91,7 @@ export interface TimelineItem {
   date: string;
   location: string;
   title: string;
-  content: JSX.Element;
+  content?: JSX.Element;
 }
 
 /**
