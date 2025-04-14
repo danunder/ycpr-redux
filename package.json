@@ -12,9 +12,9 @@
     "sitemap": "yarn next-sitemap"
   },
   "dependencies": {
+    "98.css": "^0.1.20",
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
-    "98.css": "^0.1.20",
     "autoprefixer": "10.4.16",
     "classnames": "^2.3.2",
     "emailjs-com": "^3.2.0",
@@ -62,5 +62,6 @@
   },
   "resolutions": {
     "autoprefixer": "10.4.5"
-  }
+  },
+  "packageManager": "yarn@4.9.0"
 }

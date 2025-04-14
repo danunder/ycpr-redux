@@ -6,15 +6,14 @@ import {FC, memo, useEffect, useRef} from 'react';
 import Page from '../components/Layout/Page';
 import About from '../components/Sections/About';
 import Contact from '../components/Sections/Contact';
-import Footer from '../components/Sections/Footer';
 import Hero from '../components/Sections/Hero';
-import Portfolio from "../components/Sections/Portfolio";
+// import Portfolio from "../components/Sections/Portfolio";
 import Resume from '../components/Sections/Resume';
-// import Testimonials from '../components/Sections/Testimonials';
+import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
 
 // eslint-disable-next-line react-memo/require-memo
-const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
+const StickyFooter = dynamic(() => import('../components/Sections/StickyFooter'), {ssr: false});
 
 const Home: FC = memo(() => {
   const {title, description} = homePageMeta;
@@ -23,6 +22,14 @@ const Home: FC = memo(() => {
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent | KeyboardEvent) => {
+      // Check if the event target is the window or a scrollable element
+    const isScrollableElement = (event.target as HTMLElement).closest('[data-scrollable]');
+
+    if (isScrollableElement) {
+      // Allow default scrolling for scrollable elements
+      return;
+    }
+      
       const currentSectionIndex = sectionsRef.current.findIndex((section) =>
         section.getBoundingClientRect().top >= 0
       );
@@ -61,28 +68,26 @@ const Home: FC = memo(() => {
   return (
     <Page description={description} title={title}>
 
-      <Header />
-        <section className="min-h-screen" id="welcome" ref={(el) => el && sectionsRef.current.push(el)}>
+        <section className="h-[calc(100%-3.5rem)]" id="welcome" ref={(el) => el && sectionsRef.current.push(el)}>
           <Hero />
         </section>
-        <section className="min-h-screen" id="about" ref={(el) => el && sectionsRef.current.push(el)}>
+        <section className="h-[calc(100%-3.5rem)]" id="about" ref={(el) => el && sectionsRef.current.push(el)}>
     
       <About />
             </section>
-      <section className="min-h-screen" id="resume" ref={(el) => el && sectionsRef.current.push(el)}>
+      <section className="h-[calc(100%-3.5rem)]" id="resume" ref={(el) => el && sectionsRef.current.push(el)}>
       <Resume />
       </section>
-      <section className="min-h-screen" id="portfolio" ref={(el) => el && sectionsRef.current.push(el)}>
+      {/* <section className="h-[calc(100%-3.5rem)]" id="portfolio" ref={(el) => el && sectionsRef.current.push(el)}>
       <Portfolio />
-      </section>
-      {/* <section ref={(el) => el && sectionsRef.current.push(el)} id="testimonials" className="min-h-screen">
+      </section> */}
+      <section ref={(el) => el && sectionsRef.current.push(el)} id="testimonials" className="h-[calc(100%-3.5rem)]">
         <Testimonials />
-      {/* <Testimonials /> */}
-      {/* </section> */}
-      <section className="min-h-screen" id="contact" ref={(el) => el && sectionsRef.current.push(el)}>
+      </section>
+      <section className="h-[calc(100%-3.5rem)]" id="contact" ref={(el) => el && sectionsRef.current.push(el)}>
       <Contact />
       </section>
-      <Footer />
+      <StickyFooter />
     </Page>
   );
 });

@@ -65,20 +65,19 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  name: `Yamini Coen Public Relations`,
+  name: `Yamini Coen`,
+  subtitle: 'Communications, Public Relations and Social Media Strategy',
   description: (
     <>
-      <p className="prose-lg text-black-200 lg:prose-lg">
-      Nice to meet you! I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada.
-      </p>
-      <p className="prose-lg text-black-200 lg:prose-lg">
-        Are you looking for some help with your brand’s marketing and communications strategies? Needing some social media advice, or just plainly someone to do it for you? You’re at the right place!
-      </p>
+      <p className="text-black-200 prose sm:prose-lg">
+      Hello! Welcome to my page. Are you looking for some help with your brand’s marketing and communications strategies? Needing some social media advice, or just plainly someone to do it for you? You’re at the right place!      </p>
+      <p className="text-black-200 prose sm:prose-lg">
+      Nice to meet you! I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada.       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: '/Resume 2024 OCT_Yamini Coen.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -99,17 +98,15 @@ export const aboutData: About = {
   backgroundImageSrc: cloudsImage,
   profileImageSrc: profilepic,
   description: (
-    <>
-      <p className="prose-lg text-black-200 lg:prose-lg">
-      I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada. I have been working in the marketing sphere, with a focus on communications, public relations and digital marketing, for over 7 years. I’ve worked with brands across sectors, including financial services, fintech, consumer, health, wellness and more. 
+    <div className="flex flex-col gap-y-2">
+    <p className="prose-sm text-black-200 sm:prose-lg">
+    I’m Yamini, a communications, public relations and digital marketing expert based out of Toronto, Canada. I have been working in the marketing sphere, with a focus on communications, public relations and digital marketing, for over 7 years. I’ve worked with brands across sectors, including financial services, fintech, consumer, health, wellness and more. 
       </p>
-      <p className="prose-lg text-black-200 lg:prose-lg">
-      I'm passionate about anti-racism, 2SLGBTQIA+ issues, social justice, diversity, equity and inclusion and incorporate that framework in all of my counsel and tactical recommendations.      </p>
-    </>
-  ),
+ <p className="prose-sm text-black-200 sm:prose-lg">
+      I'm passionate about anti-racism, 2SLGBTQIA+ issues, social justice, diversity, equity and inclusion and incorporate that framework in all of my counsel and tactical recommendations. </p></div>),
   aboutItems: [
     {label: 'Location', text: 'Toronto, ON', Icon: MapIcon},
-    {label: 'Interests', text: 'Dogs, Gaming, Reality TV', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Rescue Dogs, Stardew Valley, Countess Luann', Icon: SparklesIcon},
     {label: 'Study', text: 'Kings College, Halifax', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'YCPR Inc', Icon: BuildingOffice2Icon},
   ],
@@ -291,19 +288,16 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'John Doe',
-      text: 'Use this as an opportunity to promote what it is like to work with you. High value testimonials include ones from current or past co-workers, managers, or from happy clients.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg',
+      name: 'Christina Antoniou, Pfizer Canada (2020)',
+      text: 'As a client, I appreciate her responsiveness, organized approach and the great service level she provides. She is a great communicator, and know the social media landscape very well.',
     },
     {
-      name: 'Jane Doe',
-      text: 'Here you should write some nice things that someone has said about you. Encourage them to be specific and include important details (notes about a project you were on together, impressive quality produced, etc).',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/14.jpg',
+      name: 'Eric Tang, Porter Novelli Canada EVP',
+      text: 'When you work with Yamini, her positive energy is so powerful that you can\'t help but want to bring your best game to the table.',
     },
     {
-      name: 'Someone else',
-      text: 'Add several of these, and keep them as fresh as possible, but be sure to focus on quality testimonials with strong highlights of your skills/work ethic.',
-      image: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/69.jpg',
+      name: 'Arnold Lee, Sustainability in Crypto Mining',
+      text: 'Her passion for her work was evident in every project she undertook, consistently going above and beyond to ensure the best outcome. Her communication skills were exceptional, always articulating her ideas clearly and effectively, which greatly contributed to our team’s success.',
     },
   ],
 };
