@@ -1,16 +1,11 @@
 // import Image from 'next/image';
-import {FC, memo, useMemo} from 'react';
+import {FC, memo } from 'react';
 
 import {heroData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const Hero: FC = memo(() => {
-  const {name, subtitle, description, actions, downImageSrc} = heroData;
-
-  const resolveSrc = useMemo(() => {
-        if (!downImageSrc) return undefined;
-        return typeof downImageSrc === 'string' ? downImageSrc : downImageSrc.src;
-      }, [downImageSrc]);
+  const {name, subtitle, description, actions } = heroData;
 
 
   return (
@@ -21,8 +16,8 @@ const Hero: FC = memo(() => {
           <div className="title-bar">
             <div className="title-bar-text p-1 lg:p-2 text-base sm:text-2xl">Welcome</div>
           </div>
-          <div className="flex flex-col items-center gap-y-2 sm:gap-y-6 p-4 lg:p-6 text-center">
-            <h1 className="text-3xl font-bold text-black sm:text-8xl">{name}</h1>
+          <div className="flex flex-col items-center gap-y-4 sm:gap-y-6 p-4 lg:p-6 text-center">
+            <h1 className="text-4xl font-bold text-black sm:text-8xl">{name}</h1>
             <h2 className="text-base font-bold text-black sm:text-4xl">{subtitle}</h2>
 
             {description}

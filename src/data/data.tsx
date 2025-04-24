@@ -8,22 +8,35 @@ import {
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
-import InstagramIcon from '../components/Icon/InstagramIcon';
+// import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import cloudsImage from '../images/clouds.png';
+// import TwitterIcon from '../components/Icon/TwitterIcon';
+// import cloudsImage from '../images/clouds.png';
 import doubleDown from '../images/doubleDown.webp';
 import airmiles from '../images/portfolio/airmiles.png';
 import goodinvesting from '../images/portfolio/goodinvesting.png';
 import gsk from '../images/portfolio/gsk.png';
 import hut8 from '../images/portfolio/hut8.png';
-// import hillsImage from '../images/hills.png';
+import hillsImage from '../images/hills.png';
 import pfizer from '../images/portfolio/pfizer.png';
 import Siggis from '../images/portfolio/Siggis.png';
 import TDM from '../images/portfolio/TDM.png';
 import THA from '../images/portfolio/THA.png';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
+import timeline from '../images/timeline.png';
+import camera from '../images/icons/camera.png';
+import minesweeper from '../images/icons/minesweeper.png';
+import people from '../images/icons/people.png';
+import media2 from '../images/icons/media2.png';
+import defragment from '../images/icons/defragment-0.png'
+import crisis from '../images/icons/crisis.png';
+import influencer from '../images/icons/influe.png';
+import network from '../images/icons/network_televisons-3.png'
+import media from '../images/icons/media.png';
+import sound from '../images/icons/sound.png';
+import note from '../images/icons/note-2.png';
+import strategy from '../images/icons/strategy.png';
 import {
   About,
   ContactSection,
@@ -41,8 +54,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Yamini Coen - Communications, Public Relations and Social Media Strategy',
+  description: "Business site for Yamini Coen, built by danunder with significant modifications to Tim Baker's react resume template",
 };
 
 /**
@@ -77,7 +90,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: '/Resume 2024 OCT_Yamini Coen.pdf',
+      href: '/Yamini_Coen_Resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -95,7 +108,7 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  backgroundImageSrc: cloudsImage,
+  backgroundImageSrc: hillsImage,
   profileImageSrc: profilepic,
   description: (
     <div className="flex flex-col gap-y-2">
@@ -112,78 +125,76 @@ export const aboutData: About = {
   ],
 };
 
+
 /**
  * Skills section
- */
+*/
 export const skills: SkillGroup[] = [
   {
-    name: 'Some skill group',
+    name: 'Communications and Public Relations',
     skills: [
       {
         name: 'External Communications Strategies',
-        level: 10,
-      },
-      {
-        name: 'Media Relations',
-        level: 9,
-      },
-      {
-        name: 'Influencer Marketing',
-        level: 8
+        icon: strategy,
       },
       {
         name: 'Diversity, Equity and Inclusion Framework',
-        level: 7,
+        icon: defragment,
+      },
+      {
+        name: 'Media Relations',
+        icon: media2,
       },
       {
         name: 'Crisis Communications and Strategy',
-        level: 4,
+        icon: crisis,
       },
-      {
-        name: 'Social Media Analysis, Planning and Execution',
-        level: 3,
-      },
-    ],
-  },
-  {
-    name: 'Some other skill group',
-    skills: [
-      {
-        name: 'Community Management',
-        level: 9,
-      },
-      {
-        name: 'Social Media Monitoring',
-        level: 7,
-      },
-      {
-        name: 'Content Creation including Video, Photography and Audio (Podcasting)',
-        level: 6,
-      },
-    ],
-  },
-  {
-    name: 'yet another skill group',
-    skills: [
       {
         name: 'Internal Communications Strategies',
-        level: 8,
+        icon: note
       },
       {
         name: 'Event Management',
-        level: 5,
+        icon: sound,
       },
       {
         name: 'Media Monitoring and Reporting',
-        level: 4,
+        icon: media
       },
     ],
-  }
+  },
+  {
+    name: 'Social Media and Digital Marketing',
+    skills: [
+      {
+        name: 'Social Media Analysis, Planning and Execution',
+        icon: network,
+
+      },
+      {
+        name: 'Influencer Marketing',
+        icon: influencer,
+      },
+      {
+        name: 'Content Creation including Video, Photography and Audio (Podcasting)',
+        icon: camera,
+      
+      },
+      {
+        name: 'Community Management',
+        icon: people
+      },
+      {
+        name: 'Social Media Monitoring',
+        icon: minesweeper
+      },
+    ],
+  },
 ];
 
 /**
  * Portfolio section
- */
+*/
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Pfizer',
@@ -221,7 +232,7 @@ export const portfolioItems: PortfolioItem[] = [
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
+*/
 export const education: TimelineItem[] = [
   {
     date: '2017',
@@ -281,9 +292,16 @@ export const experience: TimelineItem[] = [
   },
 ];
 
+export const resumeData: Resume = {
+  timelineImageSrc: timeline,
+  education: education,
+  experience: experience,
+  skills: skills,
+  portfolioItems: portfolioItems,
+}
 /**
  * Testimonial section
- */
+*/
 export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
@@ -304,7 +322,7 @@ export const testimonial: TestimonialSection = {
 
 /**
  * Contact section
- */
+*/
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
@@ -340,6 +358,6 @@ export const socialLinks: Social[] = [
   // {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/reactresume/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Resume', Icon: ArrowDownTrayIcon, href: '/Yamini_Coen_Resume.pdf'},
+  
 ];

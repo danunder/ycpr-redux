@@ -23,7 +23,7 @@ const Home: FC = memo(() => {
   useEffect(() => {
     const handleScroll = (event: WheelEvent | KeyboardEvent) => {
       // Check if the event target is the window or a scrollable element
-    const isScrollableElement = (event.target as HTMLElement).closest('[data-scrollable]');
+    const isScrollableElement = (event.target as HTMLElement)?.closest('[data-scrollable]');
 
     if (isScrollableElement) {
       // Allow default scrolling for scrollable elements
